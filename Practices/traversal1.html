@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Move Up in DOM</title>
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js" ></script>
+    <style>
+    ul{
+        list-style: none;
+    }
+        span{
+            float: left;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <ul class="SecondParent">
+                <li>
+                    <ul>
+                        <li class="child"><span>Traversal</span>Methods</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js" ></script>
+    <script>
+	 $(document).ready(function () {
+
+   console.log($('li.child').parent());
+
+  console.log($('span').parents());
+
+ console.log($('span').parents('li'));
+
+ console.log($('span').parents('ul'));
+
+  console.log($('span').parentsUntil('ul'));
+
+ console.log($('span').parentsUntil('ul.SecondParent'));
+
+  console.log($('span').closest('ul'));
+ console.log($('.child').parents('ul'));
+ console.log($('.child').parentsUntil('ul'));
+ console.log($('.child').closest('ul'));
+  console.log($('.SecondParent').children('ul'));
+  console.log($('ul').slice(3,4));
+         
+});
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Move Up in DOM</title>
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js" ></script>
+    <style>
+    ul{
+        list-style: none;
+    }
+        span{
+            float: left;
+            font-weight: bold;
+            
+        }
+        .newElement{
+            border:1px solid red;
+        }
+        .newslice{
+            background-color: #f60;
+        }
+    </style>
+</head>
+<body>
+   <ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+  <li>list item 4</li>
+  <li>list item 5</li>
+<li>list item 6</li>
+  <li>list item 7</li>
+<li>list item 8</li>
+  <li>list item 9</li>
+</ul>
+    
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js" ></script>
+    <script>
+	 $(document).ready(function () {
+    $( "li" ).slice(2,5).addClass('newElement');
+    $( "li" ).slice(6, -1).addClass('newslice');
+         
+});
+	</script>
+	
+</body>
+</html>

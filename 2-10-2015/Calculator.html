@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Calculator Application</title>
+    <style>
+        .label{
+            width:60px;
+            height:50px;
+            border-radius: 8px;
+            background-color: #303030;
+            color:#fff;
+            line-height:30px;
+            text-align: center;
+        }
+        .calc{
+            display: inline-block;
+            border: 20px solid tan;
+            border-radius:5px;
+        }
+        .calc .output{
+            width:260px;
+            height:36px;
+            text-align: right;
+            font-size: 24px;
+            background-color:#ccc;
+        }
+        
+        .calForm {
+        background-color:#3d4543;
+
+        }
+        h3 {
+        text-align:center;
+        color:#ffd800;
+        text-decoration:underline;
+        }
+    </style>
+   <script language="javascript">
+       var outputVal = " ";
+       function passValue(value) {
+           outputVal += value;
+           document.getElementById('finalVal').value = outputVal;
+       }
+</script>
+    </head>
+<body>
+
+    <form name="calculator">
+    <div class="calc">
+        <h3>Calculator Applicaton</h3> 
+        <input type="text" name="input" id="finalVal" placeholder="0" class="output" />
+<table class="calForm">
+     <tr>
+        <td><input type="button" class="label"  onclick="passValue('0')" value="mrc"  /></td>
+        <td><input  type="button" class="label" onclick="passValue('0')" value="m-"/></td>
+        <td><input  type="button" class="label" onclick="passValue('0')" value="m+"  /></td>
+        <td><input  type="button" class="label" onclick="passValue('/')" value="/" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" class="label"  onclick="passValue('7')" value="7" /></td>
+        <td><input  type="button" class="label" onclick="passValue('8')" value="8" /></td>
+        <td><input  type="button" class="label" onclick="passValue('9')" value="9" /></td>
+        <td><input  type="button" class="label" onclick="passValue('%')" value="%" /></td>
+    </tr>
+    <tr>
+        <td><input  type="button" class="label" onclick="passValue('4')" value="4" /></td>
+        <td><input  type="button"  class="label" onclick="passValue('5')" value="5" /></td>
+        <td><input  type="button" class="label" onclick="passValue('6')" value="6" /></td>
+        <td><input  type="button" class="label" onclick="passValue('*')" value="*" /></td>
+        
+    </tr>    
+    <tr>
+        <td><input type="button" class="label" onclick="passValue('1')" value="1" /></td>
+        <td><input type="button" class="label" onclick="passValue('2')" value="2" /></td>
+        <td><input  type="button" class="label" onclick="passValue('3')" value="3" /></td>
+         <td><input  type="button" class="label" onclick="passValue('+')" value="+" /></td>
+    </tr>    
+    <tr>
+       
+        <td><input  type="button" class="label" onclick="passValue('0')" value="0" /></td>
+        <td><input  type="button" class="label" onclick="passValue('-')" value="-" /></td>
+         <td><input  type="button" class="label" onclick="input.value = ' '; outputVal = ' ' " value="C" /></td>
+         <td><input  type="button" class="label" onclick="input.value=eval(outputVal);outputVal=' '" value="=" /></td>
+    </tr>    
+</table>    
+    </div>
+        </form>
+</body>
+</html>

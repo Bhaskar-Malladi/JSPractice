@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Form Validation using javascript</title>
+    <script>
+      
+        function validate() {
+           if (document.regForm.Name.value) {
+                alert("Please provide your Name!");
+                document.regForm.Name.focus();
+                document.getElementById('usename').style.borderColor = "red";
+                return false;
+                var x = document.getElementById('usename').value;
+            }
+           
+            else if (document.regForm.password.value) {
+                alert("Please provide your password!");
+                document.regForm.password.focus();
+                document.getElementById('password').style.borderColor = "red";
+                return false;
+                var y = document.getElementById('password').value;
+            }
+
+            else if (document.regForm.EMail.value) {
+                alert("Please provide your EMail!");
+                document.regForm.EMail.focus();
+                document.getElementById('EMail').style.borderColor = "red";
+                return false;
+                var z = document.getElementById('EMail').value;
+            }
+            else {
+                return true;
+            }
+
+           var nameValue = document.getElementById('usename').value;
+           var passwordValue = document.getElementById('password').value;
+           var emailValue = document.getElementById('password').value;
+           console.log(nameValue);
+           console.log(passwordValue);
+           console.log(emailValue);
+
+        }
+    </script>
+
+    </head>
+    <body>
+        
+        <form name="regForm" onsubmit="return(validate())">
+            <div class="Registration_form">
+               
+              <table id="table-reg">
+                  <tr>
+                      <td colspan="2"><p class="text-center">Registration Form</p></td>
+                  </tr>
+                  <tr>
+                      <td><p class="lable">Name</p></td>
+                      <td><p class="value"><input type="text" name="Name" id="usename" class="lable" /></p></td>
+                  </tr>
+                   <tr>
+                      <td><p class="lable">Password</p></td>
+                      <td><p class="value"><input type="password" name="password" id="password" class="lable" /></p></td>
+                  </tr>
+                   <tr>
+                      <td><p class="lable">Email</p></td>
+                      <td><p class="value"><input type="email" name="EMail" id="EMail" class="lable" /></p></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td><p class="text-center"><input type="submit" id="submitButon" class="button"  /> <input type="reset" id="resetButon" class="button" /></p>
+                     </td>
+                  </tr>
+              </table>
+            </div>
+            <div id="results_section">
+                
+            </div>
+
+      </form>
+        <script>
+            function styles() {
+                document.getElementById('table-reg').style.backgroundColor = "#f5f5f5";
+                document.getElementById('table-reg').style.width = "500px";
+                document.getElementById('table-reg').style.height = "200px";
+                document.getElementById('table-reg').style.margin = "auto";
+               
+                var lableElements = document.querySelectorAll(".lable");
+                for (var i = 0; i < lableElements.length; i++) {
+                    lableElements[i].style.padding = "5px";
+                }
+
+                var lableElements = document.querySelectorAll(".text-center");
+                for (var i = 0; i < lableElements.length; i++) {
+                    lableElements[i].style.textAlign = "left";
+                }
+                var lableElements = document.querySelectorAll(".button");
+                for (var i = 0; i < lableElements.length; i++) {
+                    lableElements[i].style.color = "#fff";
+                    lableElements[i].style.width = "100px";
+                    lableElements[i].style.backgroundColor = "green";
+                    lableElements[i].style.padding = "5px";
+                }
+            };
+            styles();
+        </script>
+    </body>
+    </html>

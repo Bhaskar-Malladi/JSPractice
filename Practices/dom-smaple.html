@@ -1,0 +1,33 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<h1>DOM Examples</h1>
+<div id="myDiv">
+	When you declare a variable outside of any function, it is called a global variable,
+	<p id="submainDiv">because it is available to any other code in the current document. When you declare a variable within a function,</p>
+	<span class="subDiv">it is called a local variable, because it is available only within that function.</span>
+</div>
+<div id="myDiv1" name="nameDiv">
+	When you declare a variable outside of any function, it is called a global variable,
+	<p id="submainDiv">because it is available to any other code in the current document. When you declare a variable within a function,</p>
+	<span class="subDiv">it is called a local variable, because it is available only within that function.</span>
+</div>
+
+<script>
+console.log(document.getElementById('myDiv'));
+
+console.log(document.getElementsByClassName('subDiv'));
+
+console.log(document.getElementsByName('nameDiv'));
+
+console.log(document.getElementsByName('div'));
+
+console.log(document.querySelector('div'));
+
+//document.querySelectorAll('div')
+</script>
+
+</body>
+</html>

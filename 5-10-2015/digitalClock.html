@@ -1,0 +1,101 @@
+<html>
+<head><title>Calculator</title>
+<style>
+    .days li{
+    list-style:none;
+    display:inline-block;
+    color:#404040;
+    padding:8px;
+  
+    font-family:Arial;
+    }
+    
+    #daysDisplay {
+    width:400px;
+    height:100px;
+    background-color:#000;
+    color:#fff;
+    display:block;
+    text-align:center;
+    line-height:20px;
+	border:15px solid #404040;
+     }
+    #digiClock {
+    font-size:30px;
+    }
+</style>
+</head>
+<body>
+    <div id="daysDisplay">
+        <ul class="days">
+            <li id="sun">Sun</li>
+            <li id="mon">Mon</li>
+            <li id="tue">Tue</li>
+            <li id="wed">Wed</li>
+            <li id="thur">Thurs</li>
+            <li id="fri">Fri</li>
+            <li id="sat">Sat</li>
+
+        </ul>
+        <div id="digiClock"></div>
+
+    </div>
+    <script language="javascript">
+
+
+        function displayTime() {
+            var currentTime = new Date();
+            var h = currentTime.getHours();
+            var m = currentTime.getMinutes();
+            var s = currentTime.getSeconds();
+            var d = currentTime.getDay();
+
+
+            var extend = "AM";
+            if (h > 12) {
+                h = h - 12;
+                extend = "PM";
+            }
+            if (h === 0) {
+                h = 12; 
+            }
+            if (h < 10) {
+                h = "0" + h;
+            }
+            if (m < 10) {
+                m = "0" + m;
+            }
+            if (s < 10) {
+                s = "0" + s;
+            }
+            var clockPart = document.getElementById('digiClock');
+            clockPart.innerText = h + ":" + m + ":" + s + " " + extend;
+
+            if (d == "1") {
+                document.getElementById('mon').style.color = "white";
+            }
+            else if (d == "2") {
+                document.getElementById('tue').style.color = "white";
+            }
+            else if (d == "3") {
+                document.getElementById('wed').style.color = "white";
+            }
+            else if (d == "4") {
+                document.getElementById('thu').style.color = "white";
+            }
+            else if (d == "5") {
+                document.getElementById('fri').style.color = "white";
+            }
+            else if (d == "6") {
+                document.getElementById('sat').style.color = "white";
+            }
+            else if (d == "7") {
+                document.getElementById('sun').style.color = "white";
+            }
+
+        }
+        displayTime();
+        setInterval(displayTime, 1000);
+      </script>
+</body>
+</html> 

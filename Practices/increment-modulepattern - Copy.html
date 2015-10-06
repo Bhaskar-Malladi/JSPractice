@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Move Up in DOM</title>
+	 <style>
+    
+    </style>
+</head>
+<body>
+  
+    <input type="text" id="text" value="0">
+   <input type="button" value="Increment" id="incButton" />
+     <input type="button" value="Decrement"  id="decButton" />
+    <script>
+    var MyModule =  (function() {
+        "use strict";
+        var x = document.getElementById('incButton');
+        var y = document.getElementById('decButton');  
+        var getElement = document.getElementById('text').value;
+        x.addEventListener("click", addIncrement);  
+        y.addEventListener("click", addDecrement);
+        var value = 0;
+        
+         function addIncrement() {
+             getElement = ++value;
+        };
+       function addDecrement() {
+           getElement = --value;
+        };  
+        return {
+            addIncrement : addIncrement,
+            addDecrement : addDecrement
+        }
+    })();
+       
+        
+    </script>
+     
+    
+</body>
+</html>
